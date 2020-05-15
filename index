@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="master.css">
+
+<style>
+*{
+    margin: 0;
+}
+#main-doc{
+    display: static;
+    position: relative;
+    margin-left: 310px;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+#navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: auto;
+    border-right: 1px solid rgb(144, 144, 144);
+    padding: 0;
+    margin: 0;
+}
+ul{
+    position: relative;
+    padding: 0;
+    width: auto;
+}
+.nav-link0{
+    position: relative;
+    padding: 15px 0px 15px 30px;
+    margin: 2px 0;
+    width: 100%;
+    box-sizing: border-box;
+    list-style-type: none;
+    background-color: white;
+    text-transform: uppercase;
+    text-align: left;
+    color: black;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+}
+.nav-link{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.plaintext{
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    margin: 20px 0;
+    list-style-type: none;
+    text-align: justify;
+    
+}
+section{
+    padding-bottom: 50px;
+}
+.main-section{
+    max-width: 600px;
+    margin: auto;
+}
+ul{
+    border-top: 4px solid rgb(38, 194, 38);
+}
+.short{
+    font-style: italic;
+}
+
+.backS{
+    background-color: rgb(183, 255, 111);
+}
+.allHead{
+    font-size: 1.5em;
+    padding: 0;
+    text-align: center;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+ }
+.nav-link0:hover{
+    background: rgb(193, 255, 151);
+ }
+
+
+@media screen and (max-width: 900px){
+    #main-doc{
+        position: absolute;
+        margin-top: 200px;
+        margin-left: 0;
+        width: auto;
+        height: auto;
+        z-index: 1;
+    }
+    #navbar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        overflow: scroll;
+        border-right: 1px solid rgb(144, 144, 144);
+        padding: 0;
+        margin: 0;
+        z-index: 10;
+    }
+    .main-section{
+        max-width: 98%;
+        margin: 0;
+        margin: auto;
+    }
+    section{
+        padding: 0;
+    }
+    .nav-link0{
+        position: relative;
+        padding: 10px 0px 10px 0px;
+        margin: 0;
+        width: 100%;
+        background-color: white;
+        text-transform: uppercase;
+        text-align: center;
+        color: black;
+        font-weight: 300;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0em;
+}
+    .superhead{
+        background-color: white;
+}
+}
+
+
+</style>
+
+
+
+
+
+
+
+</head>
+<body>
+    <br>
+    <br>
+    <nav id="navbar">
+        <header class="allHead superhead">Python Documentation</header>
+        <ul>
+            <a class="nav-link" href="#1._Introduction"><li class="nav-link0">1. Introduction</li></a>
+            <a class="nav-link" href="#2._lexical_analysis"><li class="nav-link0">2. Lexical analysis</li></a>
+            <a class="nav-link" href="#3._data_model"><li class="nav-link0">3. Data model</li></a>
+            <a class="nav-link" href="#4._execution_model"><li class="nav-link0">4. Execution model</li></a>
+            <a class="nav-link" href="#5._the_import_system"><li class="nav-link0">5. The import system</li></a>
+            <a class="nav-link" href="#6._expressions"><li class="nav-link0">6. Expressions</li></a>
+            <a class="nav-link" href="#7._simple_statements"><li class="nav-link0">7. Simple statements</li></a>
+            <a class="nav-link" href="#8._compound_statements"><li class="nav-link0">8. Compound statements</li></a>
+            <a class="nav-link" href="#9._top-level_components"><li class="nav-link0">9. Top-level components</li></a>
+            <a class="nav-link" href="#10._full_grammar_specification"><li class="nav-link0">10. Full Grammar specification</li></a>
+        </ul>
+    </nav>
+    
+    <main id="main-doc">
+        <section class="main-section" id="1._Introduction">
+            <header class="allHead plaintext">1. Introduction</header>
+            <ul>
+                <li class="plaintext"> <p class="short">This reference manual describes the Python programming language. It is not intended as a tutorial.</p>  </li>
+                <li class="plaintext">While I am trying to be as precise as possible, I chose to use English rather than formal specifications for everything except syntax and lexical analysis. This should make the document more understandable to the average reader, but will leave room for ambiguities. Consequently, if you were coming from Mars and tried to re-implement Python from this document alone, you might have to guess things and in fact you would probably end up implementing quite a different language. On the other hand, if you are using Python and wonder what the precise rules about a particular area of the language are, you should definitely be able to find them here. If you would like to see a more formal definition of the language, maybe you could volunteer your time — or invent a cloning machine :-).</li>
+                <li class="plaintext">It is dangerous to add too many implementation details to a language reference document — the implementation may change, and other implementations of the same language may work differently. On the other hand, CPython is the one Python implementation in widespread use (although alternate implementations continue to gain support), and its particular quirks are sometimes worth being mentioned, especially where the implementation imposes additional limitations. Therefore, you’ll find short “implementation notes” sprinkled throughout the text.</li>
+                <li class="plaintext">Every Python implementation comes with a number of built-in and standard modules. These are documented in <a href="https://docs.python.org/3/library/index.html#library-index">The Python Standard Library</a> . A few built-in modules are mentioned when they interact in a significant way with the language definition.</li>
+            </ul>    
+            <h2 class="allHead">1.1. Alternate Implementations</h2>
+            <p class="plaintext">Though there is one Python implementation which is by far the most popular, there are some alternate implementations which are of particular interest to different audiences.</p>
+            <p class="plaintext">Known implementations include:</p>
+            <p class="plaintext"> <strong>CPython</strong> <br>
+                This is the original and most-maintained implementation of Python, written in C. New language features generally appear here first.
+            </p>
+            <p class="plaintext"> <strong>Jython</strong>  <br>
+                Python implemented in Java. This implementation can be used as a scripting language for Java applications, or can be used to create applications using the Java class libraries. It is also often used to create tests for Java libraries. More information can be found at <a href="http://www.jython.org/">the Jython website</a> .
+            </p>
+            <p class="plaintext"> <strong> Python for .NET</strong> <br>
+                This implementation actually uses the CPython implementation, but is a managed .NET application and makes .NET libraries available. It was created by Brian Lloyd. For more information, see the <a href="https://pythonnet.github.io/">Python for .NET home page</a>.
+            </p>
+            <p class="plaintext"> <strong>IronPython</strong> <br>
+                An alternate Python for .NET. Unlike Python.NET, this is a complete Python implementation that generates IL, and compiles Python code directly to .NET assemblies. It was created by Jim Hugunin, the original creator of Jython. For more information, see the <a href="http://ironpython.net/">IronPython website</a>.
+            </p>
+            <p class="plaintext"> <strong>PyPy</strong> <br>
+                An implementation of Python written completely in Python. It supports several advanced features not found in other implementations like stackless support and a Just in Time compiler. One of the goals of the project is to encourage experimentation with the language itself by making it easier to modify the interpreter (since it is written in Python). Additional information is available on <a href="http://pypy.org/">the PyPy project’s home page</a>.
+            </p>
+            <p class="plaintext">Each of these implementations varies in some way from the language as documented in this manual, or introduces specific information beyond what’s covered in the standard Python documentation. Please refer to the implementation-specific documentation to determine what else you need to know about the specific implementation you’re using.</p>
+            <h2 class="allHead">1.2. Notation</h2>
+            <p class="short plaintext">The descriptions of lexical analysis and syntax use a modified BNF grammar notation. This uses the following style of definition:</p>
+            <pre class="backS">name      ::=  lc_letter (lc_letter | "_")*
+                lc_letter ::=  "a"..."z"</pre>
+                                                        
+            <p class="plaintext">The first line says that a <code>name</code>  is an  <code>lc_letter</code>  followed by a sequence of zero or more <code>lc_letter</code>s  and underscores. An <code>lc_letter</code>  in turn is any of the single characters <code>'a'</code>  through <code>'z'</code> . (This rule is actually adhered to for the names defined in lexical and grammar rules in this document.)</p>
+            <p class="plaintext">Each rule begins with a name (which is the name defined by the rule) and <code>::=</code> . A vertical bar (|) is used to separate alternatives; it is the least binding operator in this notation. A star (*) means zero or more repetitions of the preceding item; likewise, a plus (+) means one or more repetitions, and a phrase enclosed in square brackets ([ ]) means zero or one occurrences (in other words, the enclosed phrase is optional). The * and + operators bind as tightly as possible; parentheses are used for grouping. Literal strings are enclosed in quotes. White space is only meaningful to separate tokens. Rules are normally contained on a single line; rules with many alternatives may be formatted alternatively with each line after the first beginning with a vertical bar.</p>
+            <p class="plaintext">In lexical definitions (as the example above), two more conventions are used: Two literal characters separated by three dots mean a choice of any single character in the given (inclusive) range of ASCII characters. A phrase between angular brackets (<...>) gives an informal description of the symbol defined; e.g., this could be used to describe the notion of ‘control character’ if needed.</p>
+            <p class="plaintext">Even though the notation used is almost the same, there is a big difference between the meaning of lexical and syntactic definitions: a lexical definition operates on the individual characters of the input source, while a syntax definition operates on the stream of tokens generated by the lexical analysis. All uses of BNF in the next chapter (“Lexical Analysis”) are lexical definitions; uses in subsequent chapters are syntactic definitions.</p>
+        </section>
+        <section class="main-section" id="2._lexical_analysis">
+            <header class="allHead plaintext">2. lexical analysis</header>
+            <ul>
+                <li class="plaintext">
+                  <p class="short">
+                      A Python program is read by a <strong>parser</strong>. Input to the parser is a stream of <strong>tokens</strong>, generated by the <strong>lexical analyzer</strong>. This chapter describes how the lexical analyzer breaks a file into tokens.
+                   </p>
+                </li>
+                <li class="plaintext">Python reads program text as Unicode code points; the encoding of a source file can be given by an encoding declaration and defaults to UTF-8, see PEP 3120 for details. If the source file cannot be decoded, a SyntaxError is raised.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="3._data_model">
+            <header class="allHead plaintext">3. data model</header>
+            <ul>
+                <li class="plaintext">
+                    <p>Objects are Python’s abstraction for data. All data in a Python program is represented by objects or by relations between objects. (In a sense, and in conformance to Von Neumann’s model of a “stored program computer”, code is also represented by objects.)</p>
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="4._execution_model">
+            <header class="allHead plaintext">4. execution model</header>
+            <ul>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="5._the_import_system">
+            <header class="allHead plaintext">5. the import system</header>
+            <ul>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="6._expressions">
+            <header class="allHead plaintext">6. expressions</header>
+            <ul>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="7._simple_statements">
+            <header class="allHead plaintext">7. simple statements</header>
+            <ul>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="8._compound_statements">
+            <header class="allHead plaintext">8. compound statements</header>
+            <ul>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="9._top-level_components">
+            <header class="allHead plaintext">9. top-level components</header>
+            <ul>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="10._full_grammar_specification">
+            <header class="allHead plaintext">10. full grammar specification</header>
+            <ul>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+                <li class="plaintext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam doloribus expedita fugit impedit totam autem repudiandae? Eaque, excepturi similique fuga repellat earum dolorum itaque architecto ipsa repudiandae delectus expedita consequatur pariatur voluptates. Possimus velit nemo ab corporis, distinctio earum quasi reprehenderit est tenetur omnis, vero nulla sequi cum! Labore, ad natus. Ipsam temporibus ex hic exercitationem suscipit, ut sit dignissimos. Quaerat consequatur praesentium aspernatur. Suscipit impedit sit eius quos nostrum laborum architecto, voluptatibus inventore vero voluptatum laboriosam deleniti aliquid. Laborum iure minus iste odit quos quia cupiditate doloremque magni, in sit, cum distinctio? Reprehenderit quis modi ad illo facere optio!
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
